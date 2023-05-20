@@ -89,6 +89,10 @@ function FormSignUp() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        //Se valida que no hayan imputs vacios
+        if (updateName.trim() === '' || updateLastName.trim() === '' || updateEmail.trim() === '') {
+            return alert("Por favor, completa todos los campos");;
+        }
         console.log({
             updateName,
             updateLastName,
