@@ -29,6 +29,7 @@ function FormSignUp() {
     function nameValidate(nombre) {
         if (nombre.length >= 3) {
             return {
+                //Se usa spread operator para clonar el objeto original
                 ...errors,
                 name: {
                     error: false,
@@ -37,6 +38,7 @@ function FormSignUp() {
             };
         } else {
             return {
+                //Se usa spread operator para clonar el objeto original
                 ...errors,
                 name: {
                     error: true,
@@ -49,6 +51,7 @@ function FormSignUp() {
     function lastNameValidate(lastName) {
         if (lastName.length >= 3) {
             return {
+                //Se usa spread operator para clonar el objeto original
                 ...errors,
                 lastName: {
                     error: false,
@@ -57,6 +60,7 @@ function FormSignUp() {
             };
         } else {
             return {
+                //Se usa spread operator para clonar el objeto original
                 ...errors,
                 lastName: {
                     error: true,
@@ -70,6 +74,7 @@ function FormSignUp() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (emailRegex.test(email)) {
             return {
+                //Se usa spread operator para clonar el objeto original
                 ...errors,
                 email: {
                     error: false,
@@ -78,6 +83,7 @@ function FormSignUp() {
             };
         } else {
             return {
+                //Se usa spread operator para clonar el objeto original
                 ...errors,
                 email: {
                     error: true,
@@ -89,7 +95,7 @@ function FormSignUp() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //Se valida que no hayan imputs vacios
+        //Se valida que no hayan inputs vacios
         if (updateName.trim() === '' || updateLastName.trim() === '' || updateEmail.trim() === '') {
             return alert("Por favor, completa todos los campos");;
         }
